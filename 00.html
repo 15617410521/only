@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .default-color {
+            color:rgb(51, 51, 51);;
+        }
+
+        .active-color {
+            color: #0ba1e4;
+        }
+
+        .click-color {
+            color: red;
+        }
+    </style>
+    <style>
+        .wode{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cen-big">
+    
+
+        <div class="small-top">
+            <a href="#">首页</a>
+            <p>/</p>
+            <a href="#">签证指南</a>
+            <p>/</p>
+            <a href="#">签证类型</a>
+            <p>/</p>
+            <span>签证类型概述</span>
+        </div>
+        <div class="left">
+            <p>签证类型</p>
+            <h1>签证类型概述</h1>
+            <div class="left_son">
+                <h2 class="myson">概述</h2>
+                <h2 class="myson">非移民签证</h2>
+                <h2 class="myson">签证类型列表</h2>
+            </div>
+    
+    
+    
+            <h1>商务/旅行签证</h1>
+            <div class="left_son">
+                <h2 class="myson">概述</h2>
+                <h2 class="myson">条件</h2>
+                <h2 class="myson">申请材料</h2>
+                <h2 class="myson">如何申请</h2>
+                <h2 class="myson">支持性文件</h2>
+                <h2 class="myson">寻求医疗服务的签证申请</h2>
+            </div>
+        </div>
+    
+    
+    </div>
+    <script>
+      var mysons = document.querySelectorAll(".myson")
+    var wodes = document.querySelectorAll("h1")
+    var wode = document.querySelectorAll(".left_son")
+    console.log(mysons)
+    console.log(wodes)
+    console.log(wode)
+    for( i = 0 ; i < mysons.length ; i++) {
+        mysons[i].addEventListener("mouseover" , function() {
+            this.classList.remove('default-color')
+            this.classList.add('active-color')
+        })
+     
+        mysons[i].addEventListener("mouseout" , function() {
+            // this.style.color = "black"
+            this.classList.toggle('active-color')
+        })
+        mysons[i].addEventListener("click" , function(e) {
+            for(var j = 0 ; j < mysons.length ; j++){
+                mysons[j].classList.add("default-color")
+                mysons[j].style.color = ""
+            }
+            this.style.color = "red"
+            // e.stopPropagation()
+        })
+        // wode[i].addEventListener("click" , function() {
+        //     wode[i].style.display = "none"
+        // })
+    }
+        
+    </script>
+</body>
+</html>
